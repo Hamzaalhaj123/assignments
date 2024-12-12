@@ -33,10 +33,10 @@ scene.add(ambientLight); // Add ambient light to the scene
 // Load textures for the cube using a texture loader
 const textureLoader = new THREE.TextureLoader();
 const textures = [
-  textureLoader.load("/th.jpg"),
-  textureLoader.load("/test.jpg"),
-  textureLoader.load("/th.jpg"),
-  textureLoader.load("/test.jpg"),
+  textureLoader.load("/image1.png"),
+  textureLoader.load("/image2.png"),
+  textureLoader.load("/image3.png"),
+  textureLoader.load("/image4.png"),
 ];
 
 // Create a box geometry for the cube (default dimensions 1x1x1)
