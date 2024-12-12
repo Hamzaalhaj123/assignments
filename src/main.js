@@ -21,6 +21,11 @@ renderer.setSize(WIDTH, HEIGHT); // Set the renderer size
 renderer.shadowMap.enabled = true; // Enable shadow rendering for more realistic lighting
 document.getElementById("container").appendChild(renderer.domElement); // Attach the renderer to a DOM element
 
+// Add a point light source to illuminate the scene
+const light = new THREE.PointLight(0xffffff, 1, 100); // White light with intensity and range
+light.position.set(10, 10, 10); // Position the light in the scene
+scene.add(light); // Add the light to the scene
+
 // Add an ambient light to soften shadows and illuminate all objects evenly
 const ambientLight = new THREE.AmbientLight(0xffffff); // Dim soft white light
 scene.add(ambientLight); // Add ambient light to the scene
@@ -29,12 +34,12 @@ scene.add(ambientLight); // Add ambient light to the scene
 const textureLoader = new THREE.TextureLoader();
 const textures = [
   textureLoader.load("../public/test.jpg"),
-  textureLoader.load("../public/th.jpg"),
+  textureLoader.load("../public/test.jpg"),
   textureLoader.load("../public/test.jpg"),
   textureLoader.load("../public/test.jpg"),
 ];
 
-// Create a box geometry for the cube
+// Create a box geometry for the cube (default dimensions 1x1x1)
 const geometry = new THREE.BoxGeometry(10, 10, 10);
 
 // Assign a different texture to each face of the cube
